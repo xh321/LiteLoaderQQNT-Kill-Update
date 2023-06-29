@@ -1,0 +1,18 @@
+{
+    "manifest_version": 1,
+    "type": "extension",
+    "name": "关闭更新弹窗",
+    "slug": "kill-update",
+    "description": "关闭NTQQ恼人的更新弹窗",
+    "version": "0.1.0",
+    "author": [
+        {
+            "name": "XiaoHe321",
+            "link": "https://github.com/xh321"
+        }
+    ],
+    "injects": {
+        "renderer": "./renderer.js",
+        "main": "./main.js"
+    }
+}
