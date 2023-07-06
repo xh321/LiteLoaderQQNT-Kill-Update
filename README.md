@@ -1,11 +1,11 @@
-# kill-update
+# LiteLoaderQQNT - kill-update
 
-BetterQQNT（JS版）插件，用于屏蔽NTQQ刚开启后的更新弹窗（你只能选择NTQQ不帮你自动下载安装，但不能避免弹窗）。
-使用前需要安装[BetterQQNT](https://github.com/mo-jinran/BetterQQNT)，并在QQNT新版上使用。
+LiteLoaderQQNT插件，用于屏蔽NTQQ刚开启后的更新弹窗（你只能选择NTQQ不帮你自动下载安装，但不能避免弹窗）。
+使用前需要安装[LiteLoaderQQNT](https://github.com/mo-jinran/LiteLoaderQQNT)，并在QQNT新版上使用。
 
 ## 使用方法
 
-clone或下载zip文件解压，将文件夹移动至`BetterQQNT数据目录/plugins/`下面，重启QQNT即可
+clone或下载zip文件解压，保留文件夹结构（文件夹名称为`插件名`，内容为github上的内容），将文件夹移动至`LiteLoaderQQNT数据目录/plugins/`下面，重启QQNT即可。
 
 实际上弹窗还是会显示，不过会被插件瞬间关闭，所以刚开启QQ时界面会灰一下然后立刻变回去（如果有人知道怎么解决欢迎pr！）
 
