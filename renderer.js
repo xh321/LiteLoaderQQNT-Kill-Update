@@ -1,3 +1,4 @@
+//渲染层拦截作为后备方案了，主要在主进程拦截
 export function onLoad() {
     const interval = setInterval(() => {
         const update_btn = document.querySelector("body > div.q-dialog > div.update-dialog.q-dialog-main > div.q-dialog-footer > div > button.q-button.q-button--primary.q-button--default > span");
