@@ -1,16 +1,22 @@
 {
-    "manifest_version": 1,
+    "manifest_version": 2,
     "type": "extension",
-    "name": "关闭更新弹窗",
+    "name": "彻底禁用更新",
     "slug": "kill-update",
-    "description": "关闭NTQQ恼人的更新弹窗",
+    "description": "彻底禁用NTQQ恼人的更新提示",
     "version": "0.1.1",
+    "thumbnail": "./icon.png",
     "author": [
         {
             "name": "XiaoHe321",
             "link": "https://github.com/xh321"
         }
     ],
+    "repository": {
+        "repo": "xh321/LiteLoaderQQNT-Kill-Update",
+        "branch": "master"
+    },
+    "platform": ["win32", "darwin", "linux"],
     "injects": {
         "renderer": "./renderer.js",
         "main": "./main.js"
