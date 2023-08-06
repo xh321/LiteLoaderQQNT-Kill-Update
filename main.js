@@ -21,10 +21,10 @@ function onBrowserWindowCreated(window) {
                 var args1 = args[1][0];
 
                 if (args1.cmdName.indexOf("onUnitedConfigUpdate") != -1) {
-
                     var isUpdate = args1.payload.configData.content;
 
                     if (
+                        isUpdate instanceof Object &&
                         isUpdate.some(
                             (item) =>
                                 item && item.title && item.title == "更新提醒"
