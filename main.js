@@ -23,13 +23,15 @@ function onBrowserWindowCreated(window) {
                 if (args1.cmdName.indexOf("onUnitedConfigUpdate") != -1) {
                     var isUpdate = args1.payload.configData.content;
 
-                    if (
-                        isUpdate instanceof Object &&
-                        isUpdate.some(
-                            (item) =>
-                                item && item.title && item.title == "更新提醒"
-                        )
-                    ) {
+                    var updateVal = isUpdate.some(
+                        (item) =>
+                            item &&
+                            item.releaseVersion &&
+                            item.lowestVersion &&
+                            item.jumpUrl
+                    );
+
+                    if (isUpdate instanceof Array && updateVal) {
                         args[1][0].payload = [];
                     }
                 }

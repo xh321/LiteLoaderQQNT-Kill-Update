@@ -4,7 +4,7 @@
     "name": "彻底禁用更新",
     "slug": "kill-update",
     "description": "彻底禁用NTQQ恼人的更新提示",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "thumbnail": "./icon.png",
     "author": {
         "name": "XiaoHe321",
