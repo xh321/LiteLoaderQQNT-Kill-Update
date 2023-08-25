@@ -5,7 +5,9 @@ LiteLoaderQQNT插件，用于屏蔽NTQQ刚开启后的更新弹窗（你只能�
 
 ## 使用方法
 
-clone或下载zip文件解压，保留文件夹结构（文件夹名称为`插件名`，内容为github上的内容），将文件夹移动至`LiteLoaderQQNT数据目录/plugins/`下面，重启QQNT即可。
+建议从`LiteLoaderQQNT`应用商店中直接下载安装，方便快捷。
+
+也可以clone或下载zip文件解压，保留文件夹结构（文件夹名称为`插件名`，内容为github上的内容），将文件夹移动至`LiteLoaderQQNT数据目录/plugins/`下面，重启QQNT即可。
 
 完全屏蔽更新包，不会出现旧版本全窗口灰一下的情况了，再也接不到更新！（除非tx改接口）
 注意！副作用是：手动检查更新会直接无效果。
