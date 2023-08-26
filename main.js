@@ -21,21 +21,24 @@ function onBrowserWindowCreated(window) {
                 var args1 = args[1][0];
 
                 if (args1.cmdName.indexOf("onUnitedConfigUpdate") != -1) {
-                    var isUpdate = args1.payload?.configData?.content;
+                    try {
+                        var isUpdate = args1.payload?.configData?.content;
+                        var realUpdateObj = JSON.parse(isUpdate);
 
-                    var updateVal =
-                        isUpdate instanceof Object &&
-                        isUpdate?.some(
-                            (item) =>
-                                item &&
-                                item.releaseVersion &&
-                                item.lowestVersion &&
-                                item.jumpUrl
-                        );
+                        var updateVal =
+                            realUpdateObj instanceof Array &&
+                            realUpdateObj?.some(
+                                (item) =>
+                                    item &&
+                                    item.releaseVersion &&
+                                    item.lowestVersion &&
+                                    item.jumpUrl
+                            );
 
-                    if (isUpdate instanceof Array && updateVal) {
-                        args[1][0].payload = [];
-                    }
+                        if (updateVal) {
+                            args[1][0].payload = [];
+                        }
+                    } catch {}
                 }
             }
         }
