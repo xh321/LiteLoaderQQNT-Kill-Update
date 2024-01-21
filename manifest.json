@@ -1,15 +1,17 @@
 {
-    "manifest_version": 3,
+    "manifest_version": 4,
     "type": "extension",
     "name": "彻底禁用更新",
     "slug": "kill-update",
     "description": "彻底禁用NTQQ恼人的更新提示",
-    "version": "0.1.4",
-    "thumbnail": "./icon.png",
-    "author": {
-        "name": "XiaoHe321",
-        "link": "https://github.com/xh321"
-    },
+    "version": "0.1.5",
+    "icon": "./icon.png",
+    "authors": [
+        {
+            "name": "XiaoHe321",
+            "link": "https://github.com/xh321"
+        }
+    ],
     "repository": {
         "repo": "xh321/LiteLoaderQQNT-Kill-Update",
         "branch": "master"
