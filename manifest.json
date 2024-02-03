@@ -14,7 +14,10 @@
     ],
     "repository": {
         "repo": "xh321/LiteLoaderQQNT-Kill-Update",
-        "branch": "master"
+        "branch": "master",
+        "release": {
+            "tag": "0.1.5"
+        }
     },
     "platform": ["win32", "darwin", "linux"],
     "injects": {
