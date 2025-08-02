@@ -1,5 +1,3 @@
-const { BrowserWindow, ipcMain } = require("electron");
-
 function onBrowserWindowCreated(window) {
     const original_send =
         (window.webContents.__qqntim_original_object &&
@@ -8,37 +6,35 @@ function onBrowserWindowCreated(window) {
 
     const patched_send = function (channel, ...args) {
         if (args.length >= 2) {
-            //更新 IPC
-            if (
-                args.some(
-                    (item) =>
-                        item instanceof Array &&
-                        item.length > 0 &&
-                        item[0] &&
-                        item[0].cmdName != null
-                )
-            ) {
-                var args1 = args[1][0];
+            // 遍历 args 查找包含 onUnitedConfigUpdate 的 cmdName
+            var targetArg = args.find(arg =>
+                arg &&
+                arg.cmdName &&
+                arg.cmdName.indexOf("onUnitedConfigUpdate") != -1
+            );
 
-                if (args1.cmdName.indexOf("onUnitedConfigUpdate") != -1) {
-                    try {
-                        var isUpdate = args1.payload?.configData?.content;
-                        var realUpdateObj = JSON.parse(isUpdate);
+            if (targetArg) {
 
-                        var updateVal =
-                            realUpdateObj instanceof Array &&
-                            realUpdateObj?.some(
-                                (item) =>
-                                    item &&
-                                    item.releaseVersion &&
-                                    item.lowestVersion &&
-                                    item.jumpUrl
+                try {
+                    var configData = targetArg.payload?.configData;
+                    if (configData && configData.content) {
+                        var realUpdateObj = JSON.parse(configData.content);
+
+                        var updateVal = realUpdateObj instanceof Array &&
+                            realUpdateObj.some(item =>
+                                item &&
+                                item.releaseVersion &&
+                                item.lowestVersion &&
+                                item.jumpUrl
                             );
 
                         if (updateVal) {
-                            args[1][0].payload = [];
+                            console.log("[Kill Update]: Find Update Package, kill it")
+                            targetArg.payload.configData.content = "[]";
                         }
-                    } catch {}
+                    }
+                } catch (e) {
+                    console.log("[Kill Update]: Error occured", e);
                 }
             }
         }
@@ -49,7 +45,7 @@ function onBrowserWindowCreated(window) {
     else window.webContents.send = patched_send;
 }
 
-function onLoad(plugin) {}
+function onLoad(plugin) { }
 
 module.exports = {
     onLoad,
